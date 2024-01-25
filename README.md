@@ -6,7 +6,11 @@ an open source data sync app and distributed server for iot data.  Intended to p
 
 Every IoT device requires an app to use it and provision it.  This is a large amount of effort by hardware companies to support what ammounts to plugging in a lightbulb so to speak.  Control is self evident for humans.  A lightbulb has states and properties.  Humans know how to use lightbulbs (in lamps).  But somehow, these just represent UUIDs to your phone or controller app.  How complex this becomes quickly when users are asked to join a lightbulb into a group, electing a commissioner (lol) and dealing with discovery.  Human: I can see the lightbulb.  Why can't I turn it on easily from my phone?  Device Manafacturers answer: install this app.  Set up this account.  Buy this hub.  Yikes!
 
-Once it is set up, where does the data go?  They don't usually tell you when you buy an IoT device.  Does each command sent to your IoT device have to go out to the cloud first??? Are the commands recorded somewhere and used to train AI?  Who is monitoring what you do with your devices?  Answer, you can't know if you can't inspect the firmware and can't control the application's data.  
+Once it is set up, where does the data go?  They don't usually tell you when you buy an IoT device.  Does each command sent to your IoT device have to go out to the cloud first??? Are the commands recorded somewhere and used to train AI?  Who is monitoring what you do with your devices?  Answer, you can't know if you can't inspect the firmware and can't control the application's data.
+
+## Secondary Problem
+
+What is the stuff in my envioronment?  Compared to ten years ago, there is more IoT advertising and detectable in your home, stuff, that perhaps you weren't aware of.  Worse, it is unidentifiable by a UUID.  You need to know protocols to really understand what is what.  Which stuff is mine?  Which stuff is not mine?  If this is a visiting device, how often have I detected this device?  What is the history?  Of the devices in my hyperlocal context that are mine, are they secure?  Forensics.  Ownership.  Security.
 
 ## Solution
 
@@ -19,9 +23,12 @@ With regard to data, this is a huge problem to solve with a simple solution.  Fo
 - Develop an open wearable standard for IoT wearables
 - Reduce the cost of developing new devices
 - Eliminate data leakage and monopolistic control of IoT devices by taking back control of the data and the devices.
+- Support a database for all things discovered, and catalog it all
+- Support time series view of your enviornment.
 
 ## Short Term Goals
 
 - Develop some wearable devices that don't require accounts or new apps to be developed
 - Develop a quick way to look at time series data from your phone in realtime or over a past timeline
-e
+
+
