@@ -18,7 +18,9 @@ Let's get back to basics of representing things as humans expet them.  We unders
 
 With regard to data, this is a huge problem to solve with a simple solution.  For the 85% of use cases where you don't need a private tunnel over the Internet into your home or car, but you just want to deal with your "hyperlocal" context, and save your data locally for future access, your phone is your best friend for this.  Let it act as the sponge if it is available, to sync data locally.  You can also nominate a local device to act as the data sync location.   If you want to get the data out of the hyperlocal context, send it to an external cloud service.  That should always be your choice!  Take back control of your data, your privacy, and your security.
 
-## Long Term Goals
+## Goals
+
+### Long Term Goals
 
 - Develop an open wearable standard for IoT wearables
 - Reduce the cost of developing new devices
@@ -26,9 +28,23 @@ With regard to data, this is a huge problem to solve with a simple solution.  Fo
 - Support a database for all things discovered, and catalog it all
 - Support time series view of your enviornment.
 
-## Short Term Goals
+### Short Term Goals
 
 - Develop some wearable devices that don't require accounts or new apps to be developed
 - Develop a quick way to look at time series data from your phone in realtime or over a past timeline
+
+## Release Milestones
+
+### Milestone I
+
+- BLE5 Device Support
+- Limited Known Device Catalog
+- Basic UI Profile Support
+- Basic Location Support
+- Basic Data Magnet (data sync/data logging)
+- Basic Time Series Data Viewer
+- Neomorphic UI
+- Audio Notifications
+- English/Japanese Localization
 
 
