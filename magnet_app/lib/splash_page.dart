@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 // XXX These are all here for debug dev purposes to allow testing
 // of specific views
 // import 'package:magnet_app/about.dart';
@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 // import 'package:magnet_app/active_treatment.dart';
 // import 'package:magnet_app/done_treatment.dart';
 
+// XXX TODO: redo this with Neumorphic
 class SplashPageWidget extends StatefulWidget {
   const SplashPageWidget({super.key});
 

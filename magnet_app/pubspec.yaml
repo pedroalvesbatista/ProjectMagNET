@@ -46,7 +46,7 @@ dependencies:
   cbl_flutter: ^2.0.9
   flutter_neumorphic:
     git:
-      url: https://github.com/den0206/Flutter-Neumorphic.git
+      url: https://github.com/truedat101/Flutter-Neumorphic
       ref: feature/remoce_accentcolor # branch name
 dev_dependencies:
   flutter_test:
@@ -78,8 +78,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/magnet_splash.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

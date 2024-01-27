@@ -267,8 +267,8 @@ packages:
     description:
       path: "."
       ref: "feature/remoce_accentcolor"
-      resolved-ref: "07f44e0ae36cf68452ed65f0516352da262c9814"
-      url: "https://github.com/den0206/Flutter-Neumorphic.git"
+      resolved-ref: "6ee765a4ea21c1fbf27ab209fc3644b2fdcfb31a"
+      url: "https://github.com/truedat101/Flutter-Neumorphic"
     source: git
     version: "3.2.0"
   flutter_reactive_ble:

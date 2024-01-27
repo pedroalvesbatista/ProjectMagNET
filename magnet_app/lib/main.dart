@@ -1,17 +1,42 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+
+
 
 import 'package:magnet_app/splash_page.dart';
+import 'package:magnet_app/about.dart';
+import 'package:magnet_app/app_state_model.dart';
+import 'package:magnet_app/provider/ble_provider.dart';
 
-void main() => runApp(MyApp());
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) {
+    runApp(
+      MultiProvider(
+        providers: [
+          // ChangeNotifierProvider(create: (context) => TimerModel()),
+          ChangeNotifierProvider(create: (context) => AppState()),
+        ],
+        child: const NeumorphicApp(
+          home: MyApp(),
+        ),
+      ),
+    );
+  });
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return NeumorphicApp(
+    return Consumer(
+    builder:(context, app, child) => NeumorphicApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       themeMode: ThemeMode.light,
@@ -25,7 +50,7 @@ class MyApp extends StatelessWidget {
         lightSource: LightSource.topLeft,
         depth: 6,
       ),
-      home: MyHomePage(),
+      home: switchScreen(Provider.of<AppState>(context))),// MyHomePage(),
     );
   }
 }
@@ -117,36 +142,37 @@ class MyHomePage extends StatelessWidget {
       return Colors.black;
     }
   }
+}
 
-// TODO: Add AppState
-/*
-  Widget switchScreen(AppState app_provider) {
+Widget switchScreen(AppState app_provider) {
   String title;
-
+  print("app_screen: $app_provider.app_screen");
   switch (app_provider.app_screen) {
     case "splash":
       title = "Splash";
       return const SplashPageWidget();
-    case "connecting":
+    case "home":
+      title ="Home";
+      return MyHomePage();
+    /* case "connecting":
       title = "Connecting";
-      return ConnectingPage(title: title);
-    case "connected":
+      return ConnectingPage(title: title); */
+    /* case "connected":
       title = "Connected";
-      return ConnectedPage(title: title);
+      return ConnectedPage(title: title); */
     case "about":
       title = "About";
       return const AboutPageWidget();
-    case "terms":
+    /* case "terms":
       title = "Terms";
-      return TermsPage(title: title);
-    case "privacy":
+      return TermsPage(title: title); */
+    /* case "privacy":
       title = "Privacy";
-      return PrivacyPolicyPage(title: title);
-    case "disconnected":
+      return PrivacyPolicyPage(title: title); */
+    /* case "disconnected":
       title = "Disconnected";
-      return ConnectionErrorPage(title: title);
+      return ConnectionErrorPage(title: title); */
     default:
       throw Exception("$app_provider.app_screen is not a valid screen state");
   }
-  */
 }
