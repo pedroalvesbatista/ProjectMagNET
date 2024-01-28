@@ -14,7 +14,7 @@ class BLEProvider extends ChangeNotifier {
   bool connected = false;
 
   //Bluetooth Related Variables
-  late DiscoveredDevice haloDevice;
+  late DiscoveredDevice discoveredDevice;
   final FlutterReactiveBle ble = FlutterReactiveBle();
   late StreamSubscription<DiscoveredDevice> scanDeviceStream;
   late QualifiedCharacteristic rxCharacterisitic, txCharacterisitic;

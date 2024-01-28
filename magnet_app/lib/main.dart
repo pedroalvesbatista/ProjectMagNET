@@ -57,18 +57,23 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-
+  
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context, listen: false);
+
     return Scaffold(
       floatingActionButton: NeumorphicFloatingActionButton(
         child: Icon(Icons.add, size: 30),
-        onPressed: () {},
+        onPressed: () {
+          appState.scanAndConnectToDevice();
+        },
       ),
       backgroundColor: NeumorphicTheme.baseColor(context),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            /*
             NeumorphicButton(
               onPressed: () {
                 print("onClick");
@@ -120,6 +125,7 @@ class MyHomePage extends StatelessWidget {
                   "Go to full sample",
                   style: TextStyle(color: _textColor(context)),
                 )),
+                */
           ],
         ),
       ),

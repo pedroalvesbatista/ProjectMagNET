@@ -48,7 +48,7 @@ class AppState extends BLEProvider {
     
     Timer(const Duration(seconds: 5), () {
       // scanAndConnectToDevice();
-      print("Move to home scree");
+      print("Move to home screen");
       app_screen = "home";
       notifyListeners();
     });
@@ -101,7 +101,7 @@ class AppState extends BLEProvider {
         print("examinging new device");
         print("---------------------");
         if (device.id == deviceId) {
-          print("--------------> Found Halo!!!!");
+          print("--------------> Found match!!!!");
         } else {
           print(device.name +
               " " +
@@ -110,8 +110,8 @@ class AppState extends BLEProvider {
               device.id);
         }
         // print(device.id);
-        if (device.name == "Halo") {
-          haloDevice = device;
+        if (device.name == "target") {
+          discoveredDevice = device;
           foundDeviceWaitingToConnect = true;
           notifyListeners();
           print("Halo is found");
@@ -132,7 +132,8 @@ class AppState extends BLEProvider {
         scanStarted = false;
 
         if (!connected) {
-          _bleUpdateScreenState("disconnected");
+          // XXX TODO: update screen at end of scan
+          // _bleUpdateScreenState("disconnected");
         }
 
         notifyListeners();
@@ -153,7 +154,8 @@ class AppState extends BLEProvider {
 
   void scanAndConnectToDevice() async {
     //Update Screen
-    _bleUpdateScreenState("connecting");
+    // XXX TODO: show progress on scan
+    // _bleUpdateScreenState("connecting");
 
     startScan();
 
@@ -167,7 +169,7 @@ class AppState extends BLEProvider {
   void _connectToDevice() async {
     Stream<ConnectionStateUpdate> _currentConnnectionStream =
         ble.connectToDevice(
-            id: haloDevice.id,
+            id: discoveredDevice.id,
             servicesWithCharacteristicsToDiscover: {
               serviceUuid: [txUUID, rxUUID]
             },
