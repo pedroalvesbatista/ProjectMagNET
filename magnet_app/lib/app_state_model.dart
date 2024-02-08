@@ -1,4 +1,5 @@
 import 'dart:io' show Platform, sleep;
+// import 'dart:js_interop';
 import 'dart:math';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,7 @@ class AppState extends BLEProvider {
 
 
   Timer? btnStatusTimer;
- 
+  
 
   bool getButtonState() {
     return treat_state;
@@ -98,15 +99,22 @@ class AppState extends BLEProvider {
       scanDeviceStream = ble.scanForDevices(
           withServices: [], // [serviceUuid]
           scanMode: ScanMode.lowLatency).listen((device) {
-        print("examinging new device");
+        print("examining new device");
         print("---------------------");
+        
         if (device.id == deviceId) {
           print("--------------> Found match!!!!");
         } else {
+          device.serviceData.forEach((k, v) {
+            print('{ key: $k, value: $v }');
+          });
+
           print(device.name +
-              " " +
+              " UUIDs: " +
+              device.serviceUuids.toString() +
+              " MfgData: " +
               device.manufacturerData.toString() +
-              " " +
+              " ID: " +
               device.id);
         }
         // print(device.id);
