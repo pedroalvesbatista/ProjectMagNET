@@ -1,8 +1,9 @@
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-
+import 'package:cbl_flutter/cbl_flutter.dart';
 
 import 'package:magnet_app/splash_page.dart';
 import 'package:magnet_app/about.dart';
@@ -10,8 +11,11 @@ import 'package:magnet_app/app_state_model.dart';
 import 'package:magnet_app/provider/ble_provider.dart';
 
 
-void main() {
+Future<void> main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
+  // Now initialize Couchbase Lite.
+  await CouchbaseLiteFlutter.init();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

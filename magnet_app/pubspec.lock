@@ -105,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.2"
+  cbl_dart:
+    dependency: "direct dev"
+    description:
+      name: cbl_dart
+      sha256: b7ac781c2b01297849b2740db8fc051b25f323d4516b51a66295c9280319cd36
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   cbl_ffi:
     dependency: transitive
     description:
@@ -121,6 +129,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.9"
+  cbl_flutter_ce:
+    dependency: "direct main"
+    description:
+      name: cbl_flutter_ce
+      sha256: "14a6035bf95e284f48b1c49c92b4122bb06b74197b82c1eae9014204294a9880"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   cbl_flutter_platform_interface:
     dependency: transitive
     description:
@@ -133,10 +149,10 @@ packages:
     dependency: transitive
     description:
       name: cbl_libcblite_api
-      sha256: b2cfb36c883b2b14029f47710f00908a26fcea0ef5182b053fe9d7738413920e
+      sha256: "839f16022fca3417acc171b683d8b542344277deab5df497736adb2ed803a60a"
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.3"
+    version: "3.1.1"
   cbl_libcblitedart_api:
     dependency: transitive
     description:
@@ -301,10 +317,10 @@ packages:
     dependency: transitive
     description:
       name: http
-      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "0.13.6"
   http_parser:
     dependency: transitive
     description:
@@ -345,6 +361,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "623a88c9594aa774443aa3eb2d41807a48486b5613e67599fb4c41c0ad47c340"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   matcher:
     dependency: transitive
     description:

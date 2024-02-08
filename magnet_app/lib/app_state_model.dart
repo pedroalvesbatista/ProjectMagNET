@@ -1,6 +1,8 @@
 import 'dart:io' show Platform, sleep;
 // import 'dart:js_interop';
 import 'dart:math';
+import 'dart:async';
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +11,8 @@ import 'package:magnet_app/provider/ble_provider.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 // import 'package:location_permissions/location_permissions.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'dart:async';
+import 'package:cbl/cbl.dart';
+
 
 /**
  * 
@@ -23,7 +26,7 @@ class AppState extends BLEProvider {
   String? app_screen = "splash";
   String? prev_screen = null;
   bool timerStatus = false;
-
+  AsyncDatabase? _db;
 
   Timer? btnStatusTimer;
   
@@ -45,8 +48,11 @@ class AppState extends BLEProvider {
     return scanStarted;
   }
 
+  Future initDB() async {
+    _db = await Database.openAsync('magnetdb-schema1');
+  }
+
   AppState() {
-    
     Timer(const Duration(seconds: 5), () {
       // scanAndConnectToDevice();
       print("Move to home screen");
@@ -58,6 +64,9 @@ class AppState extends BLEProvider {
 
   //Scan And Connect Methods
   void startScan() async {
+    if (_db == null) {
+      initDB();
+    }
     bool permGranted = false;
     scanStarted = true;
     notifyListeners();
@@ -98,13 +107,24 @@ class AppState extends BLEProvider {
       print("Scanning ...");
       scanDeviceStream = ble.scanForDevices(
           withServices: [], // [serviceUuid]
-          scanMode: ScanMode.lowLatency).listen((device) {
+          scanMode: ScanMode.lowLatency).listen((device) async {
         print("examining new device");
         print("---------------------");
         
         if (device.id == deviceId) {
           print("--------------> Found match!!!!");
         } else {
+          // Create a new document.
+          final adoc = await _db!.document(device.id);
+          if (adoc == null) {
+            final mutableDocumemt = MutableDocument.withId('hotel::1')
+              ..setInteger(1, key: 'scans')
+              ..setString('todo', key: 'name')
+              ..setDate(DateTime.now(), key: 'createdAt');
+            await _db?.saveDocument(mutableDocumemt);
+          }
+          
+
           device.serviceData.forEach((k, v) {
             print('{ key: $k, value: $v }');
           });
