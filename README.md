@@ -44,7 +44,7 @@ With regard to data, this is a huge problem to solve with a simple solution.  Fo
 - Basic Location Support
 - Basic Data Magnet (data sync/data logging)
 - Basic Time Series Data Viewer
-- Neomorphic UI
+- Neumorphic UI
 - Audio Notifications
 - English/Japanese Localization
 

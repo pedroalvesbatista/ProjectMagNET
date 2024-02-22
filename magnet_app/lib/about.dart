@@ -20,50 +20,51 @@ class _AboutPageWidgetState extends State<AboutPageWidget> {
 
     return Scaffold(
       backgroundColor: const Color(0xFF4bb0c9),
-      appBar: AppBar(
+      appBar: NeumorphicAppBar( // AppBar(
         centerTitle: true,
-        toolbarHeight: 80,
-        backgroundColor: const Color(0xFF4bb0c9),
+        
+        // toolbarHeight: 80,
+        // backgroundColor: const Color(0xFF4bb0c9),
         title: Image.asset('assets/images/mobilelogo.png'),
         ),
             drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                appState.app_screen = "treatment";
-              },
-            ),
-            ListTile(
-              title: const Text('Privacy'),
-              onTap: () {
-                appState.app_screen = "privacy";
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: const Text('Home'),
+                    onTap: () {
+                      appState.app_screen = "home";
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Privacy'),
+                    onTap: () {
+                      appState.app_screen = "privacy";
 
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (context) => const AboutPageWidget(),
-                //   ),
-                // );
-                
-              },
-            ),
-                      ListTile(
-              title: const Text('Terms'),
-              onTap: () {
-                appState.app_screen = "terms";
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const AboutPageWidget(),
+                      //   ),
+                      // );
+                      
+                    },
+                  ),
+                            ListTile(
+                    title: const Text('Terms'),
+                    onTap: () {
+                      appState.app_screen = "terms";
 
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (context) => const AboutPageWidget(),
-                //   ),
-                // );
-                
-              },
-            )
-          ],
-        ),
-      ),
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const AboutPageWidget(),
+                      //   ),
+                      // );
+                      
+                    },
+                  )
+                ],
+              ),
+            ),
         body: const Center(
           child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

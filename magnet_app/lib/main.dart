@@ -73,6 +73,50 @@ class MyHomePage extends StatelessWidget {
         },
       ),
       backgroundColor: NeumorphicTheme.baseColor(context),
+      appBar: NeumorphicAppBar (
+        centerTitle: true,
+        // toolbarHeight: 80,
+        // backgroundColor: const Color(0xFF4bb0c9),
+        title: Image.asset('assets/images/magnet_icon.png'),
+        ),
+            drawer: Drawer(
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: const Text('Home'),
+                    onTap: () {
+                      appState.app_screen = "home";
+                    },
+                  ),
+                  ListTile(
+                    title: const Text('Privacy'),
+                    onTap: () {
+                      appState.app_screen = "privacy";
+
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const AboutPageWidget(),
+                      //   ),
+                      // );
+                      
+                    },
+                  ),
+                            ListTile(
+                    title: const Text('Terms'),
+                    onTap: () {
+                      appState.app_screen = "terms";
+
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const AboutPageWidget(),
+                      //   ),
+                      // );
+                      
+                    },
+                  )
+                ],
+              ),
+            ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
