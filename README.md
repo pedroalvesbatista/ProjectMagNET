@@ -48,4 +48,9 @@ With regard to data, this is a huge problem to solve with a simple solution.  Fo
 - Audio Notifications
 - English/Japanese Localization
 
+## Inspirations
 
+- nRF Connect (of course!): This is the gold standard for scanning and interaction at a low level with BLE devices
+- HomeKit: I did two different HomeKit implementations.  I learned a lot from the experience.  HomeKit and dealing with Apple (certification) shaped/warped my view of what is possible when dealing with an ecosystem dominated by FANG companies.  Still, the notion of something that just works if it is compatible, at a high level and not at a low level ... this is the dream.
+- Adruino IDE: The ability to extend the Adruino is fantastic.  Any one can provide components as libraries, tools, and board profiles.  All managed by JSON URLs.  So useful and I have found this is still easier than using a real low level package manager.  Much to learn from the success of this approach.
+- Arduio Open Hardware ecosystem: It is the gold standard for Open-ish hardware.  People publishing eagle files, schematics, stl files, etc., and software.  Wow, game changing.
