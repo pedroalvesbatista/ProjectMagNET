@@ -32,6 +32,7 @@ With regard to data, this is a huge problem to solve with a simple solution.  Fo
 
 - Develop some wearable devices that don't require accounts or new apps to be developed
 - Develop a quick way to look at time series data from your phone in realtime or over a past timeline
+- Develop app features that let you easily control your IoT hardware
 
 ## Release Milestones
 
